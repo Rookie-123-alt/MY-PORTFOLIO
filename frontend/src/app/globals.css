@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Amazon retail theme styling variables */
+  --background: #eaeded; /* Amazon standard page gray background */
+  --foreground: #111111; /* Strong contrast dark text */
+  --primary: #131921; /* Charcoal black primary */
+  --primary-hover: #232f3e; /* Navy secondary subnav */
+  --accent: #ff9900; /* Amazon signature orange */
+  --accent-yellow: #febd69; /* Soft amber/yellow */
+  
+  --card-bg: #ffffff;
+  --card-border: #d5d9d9; /* Standard Amazon border */
+  --text-muted: #565959; /* Standard retail muted text */
+}
+
+.dark {
+  /* AWS Management Console dark mode styling variables */
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --primary: #1e293b;
+  --primary-hover: #334155;
+  --accent: #ff9900;
+  --accent-yellow: #f59e0b;
+  
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-muted: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* Amazon Style Card Panels */
+.pro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px; /* Amazon is boxy/slight round */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pro-card:hover {
+  border-color: #a8a8a8;
+}
+
+.dark .pro-card:hover {
+  border-color: #475569;
+}
+
+/* Amazon Pill Buttons */
+.btn-amazon {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111111;
+  border-radius: 20px; /* Pill shaped */
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+  transition: background 0.1s ease;
+}
+
+.btn-amazon:hover {
+  background: linear-gradient(to bottom, #f5d78e, #eeb933);
+}
+
+.btn-amazon-orange {
+  background: linear-gradient(to bottom, #f5b77a, #e47911);
+  border: 1px solid;
+  border-color: #a4570f #97500e #80440c;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
+  transition: background 0.1s ease;
+}
+
+.btn-amazon-orange:hover {
+  background: linear-gradient(to bottom, #f3a85c, #d9700d);
+}
+
+.btn-amazon-red {
+  background: linear-gradient(to bottom, #f57a7a, #d63031);
+  border: 1px solid;
+  border-color: #a41b1b #971515 #800e0e;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
+  transition: background 0.1s ease;
+}
+
+.btn-amazon-red:hover {
+  background: linear-gradient(to bottom, #f35b5b, #c02525);
+}
+
+.btn-amazon-secondary {
+  background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+  border: 1px solid;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  color: #111111;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.btn-amazon-secondary:hover {
+  background: linear-gradient(to bottom, #eef0f3, #dadfe2);
+}
+
+/* AWS Dark Theme Buttons */
+.dark .btn-amazon {
+  background: #ff9900;
+  border-color: #d9700d;
+  color: #111111;
+  box-shadow: none;
+}
+.dark .btn-amazon:hover {
+  background: #e47911;
+}
+
+.dark .btn-amazon-red {
+  background: #dc2626;
+  border-color: #b91c1c;
+  color: #ffffff;
+  box-shadow: none;
+}
+.dark .btn-amazon-red:hover {
+  background: #b91c1c;
+}
+
+.dark .btn-amazon-secondary {
+  background: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+.dark .btn-amazon-secondary:hover {
+  background: #475569;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
