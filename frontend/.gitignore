@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# lockfile (let Vercel generate fresh with correct platform binaries)
+package-lock.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
